@@ -3,19 +3,16 @@ import moment from 'moment'
 // import Calendar from 'react-calendar';
 import { useSelector } from 'react-redux'
 import { RootState } from '@redux/store'
-import { FileInterface, Report, ReportType } from '@data/interfaces'
+import { ReportType } from '@data/interfaces'
 import UploadReportFilesBottomSheet from './UploadReportFilesBottomSheet';
 import ButtonTray from './ButtonTray';
 import { useUpdateBottomUploadReportFilesContext, useBottomUploadReportFilesContext } from '@contexts/BottomUploadReportFilesContext'
 import cx from 'classnames'
-import { v4 as uuid } from 'uuid'
 import { useUpdateBottomUploadContainer } from '@contexts/BottomUploadContainerContext'
 import { useDispatch } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '@actions/actionCreators'
 import { AppDispatch } from '@redux/store'
-import axios from 'axios'
-import S3FileUpload from 'react-s3';
 import { apiClient } from '@utils/apiClient'
 
 interface FormInterface {
@@ -37,26 +34,7 @@ const BottomUploadReportForm = () => {
     // Preparing dispatch actions
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actions, dispatch)
-    const { clearUploadedFiles, toggleAddMode, uploadReport } = AC
-
-
-    const uploadFileToS3 = async (file:any) => {
-        const config = {
-            bucketName: 'mediavault-reports-db',
-            dirName: patientId, /* optional */
-            region: 'us-east-1',
-            accessKeyId: 'AKIAXVK5ZIQTU5WQXTX7',
-            secretAccessKey: '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',
-        }    
-    
-        try {
-            const data = await S3FileUpload.uploadFile(file, config)
-            return data.location
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
+    const { clearUploadedFiles, toggleAddMode } = AC
 
     useEffect(() => {
         // There should atleast be some file uploaded
@@ -68,7 +46,6 @@ const BottomUploadReportForm = () => {
         // Some tag must be selected
         // const reportTypeSelected = form.reportType
 
-        console.log({ finiteUploadedFiles, reportNameEntered })
         if (finiteUploadedFiles && reportNameEntered) {
             setIsDisabled(false)
         } else {

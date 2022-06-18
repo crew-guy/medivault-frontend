@@ -3,35 +3,26 @@ import Header from '../widgets/header/Header';
 import ReportsWrapper from '@widgets/report-history/ReportsWrapper';
 import {useSelector, useDispatch} from 'react-redux'
 import {RootState, AppDispatch} from '@redux/store';
-import {Mode, Report} from '@data/interfaces'
+import {Mode} from '@data/interfaces'
 import BottomUploadContainer from '@components/widgets/bottom-sheet/BottomUploadContainer';
 import cx from 'classnames'
 import Footer from '@components/widgets/report-history/Footer';
 // import {useHistory} from 'react-router-dom'
-import {useLocation} from 'react-router-dom'
+// import {useLocation} from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import * as actionCreators from '@actions/actionCreators'
 import {retrieveData} from '@data/data'
 import PreloaderScreen from './PreloaderScreen';
 // eslint-disable-next-line
-import mixpanel from 'mixpanel-browser'
-import jwt_decode from "jwt-decode";
+// import mixpanel from 'mixpanel-browser'
+// import jwt_decode from "jwt-decode";
 import {AnimatePresence} from 'framer-motion'
 import AddReportButton from '@widgets/AddReportButton';
 // import APIClient from "./../../APIClient";
 import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContext';
 
-interface Object {
-    sub: string,
-    patientId: string,
-    iat: number,
-    name: string
-}
-
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
-    const location = useLocation()
     const [reachedFooter, setReachedFooter] = useState<boolean>(false)
-    const [isJwt, setIsJwt] = useState<boolean>(false);
     const patientId = useSelector((state:RootState)=> state.patient.user.phoneNumber)
     const mode = useSelector((state: RootState) => state.patient.mode);
     const [loading, setLoading] = useState<boolean>(true)
@@ -69,7 +60,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                 {!loading && <>
                     {/* <AnimatePresence key={'top level'} > */}
                         <div className={viewReportsClass}>
-                            <Header isJwt={isJwt}/>
+                            <Header isJwt={true}/>
                             <ReportsWrapper/>
                             <AnimatePresence>
                                {mode !== Mode.SELECTING && !reachedFooter &&
