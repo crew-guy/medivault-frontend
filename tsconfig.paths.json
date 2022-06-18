@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@components/*": ["./src/components/*"],
+			"@reducers/*": ["./src/redux/reducers/*"],
+			"@data/*": ["./src/redux/data/*"],
+			"@utils/*": ["./src/utils/*"],
+			"@actions/*": ["./src/redux/actions/*"],
+			"@redux/*": ["./src/redux/*"],
+			"@contexts/*": ["./src/contexts/*"],
+			"@styles/*": ["./src/assets/css/*"],
+			"@images/*": ["./src/assets/images/*"],
+			"@widgets/*": ["./src/components/widgets/*"],
+			"@screens/*": ["./src/components/screens/*"]
+		}
+	}
+}

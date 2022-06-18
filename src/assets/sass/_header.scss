@@ -1,0 +1,85 @@
+@import './mixins/flexbox';
+$padding-around: 1.3rem;
+
+.header {
+	width: 100%;
+	padding-left: $padding-around;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-top: 2.3rem;
+	background: $vibra100;
+	z-index: 9;
+	position: relative;
+	@include flexbox(row, space-between, flex-end);
+	position: sticky;
+	top: 0;
+	height: 7rem;
+	color: #ecfdff;
+	.dropdown-container {
+		@include flexbox(row, flex-start, center);
+		padding-bottom: $padding-around;
+		position: relative;
+		.patient-name {
+			font-size: 1.5rem;
+		}
+		.dropdown-arrow {
+			width: 0;
+			height: 0;
+			margin-left: 1rem;
+			border-left: 7.5px solid transparent;
+			border-right: 7.5px solid transparent;
+			border-top: 7.5px solid $white;
+			transition: 0.2s ease-in;
+			&.upwards {
+				transform-origin: center center;
+				transform: rotateZ(180deg);
+			}
+		}
+		.dropdown {
+			position: absolute;
+			bottom: -110%;
+			left: 10%;
+			width: 250px;
+			background: rgba(255, 255, 255, 0.7) !important;
+			backdrop-filter: blur(5px);
+			border-radius: 1.4rem;
+			font-family: 'Circular-Air';
+			color: $vibra100;
+			font-size: 1.1rem;
+			padding: 1rem 1.5rem;
+			.logout {
+				cursor: pointer;
+				color: $majorTom100;
+			}
+		}
+	}
+	.img-container {
+		img {
+			height: 1.18rem;
+		}
+		// as $padding-around = 1.1rem
+		padding-right: calc(1.3rem + 0.5rem);
+		padding-bottom: calc(1.3rem + 0.2rem);
+		@include flexbox(row, flex-end, flex-end);
+		cursor: pointer;
+	}
+}
+
+.status {
+	@include flexbox(row, flex-start, flex-end);
+	font-family: 'Circular-Air';
+	.back-to-viewing {
+		margin-right: 1.4rem;
+		cursor: pointer;
+		font-size: 1rem;
+		color: $lumen40;
+	}
+	.selected-items {
+		color: $blu30;
+		font-size: 0.7rem;
+	}
+}
+.action-bar {
+	padding-bottom: 1.4rem;
+	padding-top: 1rem;
+}

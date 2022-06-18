@@ -1,0 +1,175 @@
+.upload-report-form {
+	width: 100%;
+	@include flexbox(column, flex-start, flex-start);
+	.files-container {
+		width: 100%;
+		padding: 2rem;
+		padding-bottom: 0.7rem;
+		@include flexbox(column, center, flex-start);
+		box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+		.add-more {
+			margin-top: 2rem;
+			width: 100%;
+			cursor: pointer;
+			padding: 0 0.4rem;
+			text-align: right;
+			font-family: 'Circular-Std-Medium';
+			font-size: 1.3rem;
+			color: $blu80;
+		}
+	}
+	.report-form {
+		@include flexbox(column, space-around, flex-start);
+		margin: 0 2.5rem;
+		margin-top: 3.5rem;
+		width: 100%;
+		color: $vibra60;
+		.report-name-wrapper {
+			@include flexbox(column, flex-start, flex-start);
+			width: 100%;
+			input {
+				width: 70%;
+				font-size: 1.4rem;
+				border: none;
+				outline: none;
+				font-family: 'Circular-Air';
+				padding-bottom: 0.4rem;
+				border-bottom: 1px solid $vibra60;
+			}
+
+			label {
+				font-size: 0.9rem;
+				color: $vibra30;
+				font-family: 'Circular-Air';
+			}
+		}
+		.btn-tray {
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+			::-webkit-scrollbar {
+				display: none;
+			}
+			p {
+				margin-top: 3rem;
+				font-family: 'Circular-Std-Book';
+				font-size: 1.2rem;
+				color: $vibra40;
+				padding: 1rem 0;
+				overflow-x: scroll;
+			}
+			.report-tag-input {
+				display: block;
+				margin: 1rem 0;
+				border: none;
+				outline: none;
+				font-family: 'Circular-Air';
+				font-size: 1rem;
+				padding-bottom: 0.4rem;
+				width: 100%;
+				color: $vibra100;
+				border-bottom: 1px solid $vibra100;
+			}
+			button {
+				border: 1.9px solid $vibra40;
+				color: $vibra40;
+				outline: none;
+				border-radius: 1.7rem;
+				font-family: 'Circular-Air';
+				background: $white;
+				padding: 0.3rem 0.7rem;
+				cursor: pointer;
+				transition: 0.2s ease-in;
+				margin-right: 0.9rem;
+				&.active {
+					border: 1.9px solid $blu100;
+					color: $blu100;
+				}
+				@media all and (max-width: 720px) {
+					margin-right: 0.5rem;
+					padding: 0.3rem 0.5rem;
+					font-size: 0.85rem;
+				}
+			}
+		}
+		.report-date-container {
+			margin-top: 3rem;
+			@include flexbox(column, flex-start, flex-start);
+			font-family: 'Circular-Air';
+			input {
+				width: 100%;
+				font-family: 'Circular-Air';
+				font-size: 1.3rem;
+				background: $white;
+				border: none;
+				border-bottom: 1.5px solid $vibra60;
+			}
+			label {
+				margin-top: 0.4rem;
+				font-size: 1rem;
+			}
+		}
+	}
+	.action-buttons {
+		width: 100%;
+		margin-top: 2rem;
+		@include flexbox(row, space-around, center);
+		font-family: 'Circular-Std-Book';
+		button {
+			border: none;
+			outline: none;
+			border-radius: 3rem;
+			font-size: 1rem;
+			padding: 1.3rem 3.5rem;
+		}
+		.cancel {
+			background: $white;
+			color: $vibra60;
+		}
+		.upload {
+			background: $vibra100;
+			color: $white;
+			transition: 0.2s ease-in;
+			&.disabled {
+				opacity: 0.4;
+			}
+		}
+	}
+}
+
+// TODO : Styling calendar input
+/* Removes the clear button from date inputs */
+// input[type='date']::-webkit-clear-button {
+// 	display: none;
+// }
+
+// /* Removes the spin button */
+// input[type='date']::-webkit-inner-spin-button {
+// 	display: none;
+// }
+
+// /* Always display the drop down caret */
+// input[type='date']::-webkit-calendar-picker-indicator {
+// 	color: $vibra100;
+// }
+
+// /* A few custom styles for date inputs */
+// input[type='date'] {
+// 	appearance: none;
+// 	-webkit-appearance: none;
+// 	color: $blu100;
+// 	font-family: 'Helvetica', arial, sans-serif;
+// 	font-size: 18px;
+// 	border: 1px solid $bike100;
+// 	background: $bike100;
+// 	padding: 5px;
+// 	display: inline-block !important;
+// 	visibility: visible !important;
+// }
+
+// input[type='date'],
+// focus {
+// 	color: $majorTom100;
+// 	box-shadow: none;
+// 	-webkit-box-shadow: none;
+// 	-moz-box-shadow: none;
+// }

@@ -1,0 +1,44 @@
+// variables
+@import './variables/colors';
+@import './variables/fonts';
+@import './typography';
+@import './variables/variables';
+
+// mixins
+@import './mixins/flexbox';
+
+// screens
+@import './screens/login-screen';
+@import './screens/preloader';
+@import './screens/stories-screen';
+
+// widgets
+@import './layouts';
+@import './year-container';
+@import './report-container';
+@import './reports-wrapper';
+@import './header';
+@import './add-report-bottom-sheet';
+@import './button-wrapper';
+@import './footer';
+@import './share-delete';
+@import './upload-report-form';
+@import './month-container';
+@import './report-image-container';
+@import './report-card';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	&:focus {
+		outline: none;
+	}
+}

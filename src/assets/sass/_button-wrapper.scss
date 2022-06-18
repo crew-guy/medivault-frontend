@@ -1,0 +1,32 @@
+@import './mixins/flexbox';
+
+.button-wrapper {
+	background: linear-gradient(
+		152deg,
+		rgb(247, 249, 255),
+		rgba(163, 183, 245, 0)
+	);
+	cursor: pointer;
+	@include flexbox(column, center, center);
+	border-radius: 2rem;
+	padding: 4rem;
+	img {
+		height: 3rem;
+	}
+	p {
+		font-family: 'Circular-Std-Book';
+		color: $vibra100;
+		font-size: 1.6rem;
+		margin-top: 1rem;
+	}
+	@media all and (max-width: 720px) {
+		padding: 2rem;
+		img {
+			height: 1.8rem;
+		}
+		p {
+			font-size: 1rem;
+			margin-top: 1rem;
+		}
+	}
+}

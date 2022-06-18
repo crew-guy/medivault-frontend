@@ -1,0 +1,21 @@
+.reports-by-month {
+	padding: 0.7rem 1.5rem 0.9rem 1.5rem;
+}
+
+.month-bar {
+	margin-bottom: 1.5rem;
+	margin-left: 0.3rem;
+	@include flexbox(row, flex-start, center);
+	.circle {
+		height: 0.6rem;
+		width: 0.6rem;
+		border-radius: 50%;
+		background: $vibra60;
+		margin-right: 0.5rem;
+	}
+	.month-year-key {
+		font-family: 'Circular-Air';
+		font-size: 1rem;
+		color: $vibra60;
+	}
+}

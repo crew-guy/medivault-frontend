@@ -1,0 +1,33 @@
+@import './mixins/flexbox';
+
+.report-container-wrapper {
+	@include flexbox(row, stretch, center);
+}
+
+.report-container {
+	width: 100%;
+	padding: 2rem 2.4rem 1.9rem 2.4rem;
+	&.expanded {
+		padding-bottom: 1rem !important;
+	}
+	border-radius: 0.7rem;
+	box-shadow: 0px 2px 5px rgba(40, 40, 69, 0.1);
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
+
+.checkbox-container {
+	cursor: pointer;
+	padding: 0.4rem;
+	@include flexbox(row, center, center);
+	img {
+		height: 1.7rem;
+		transition: 0.2s ease-in;
+		&.active {
+			opacity: 1;
+		}
+		&.passive {
+			opacity: 0.4;
+		}
+	}
+}

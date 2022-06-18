@@ -1,0 +1,71 @@
+.stories-container > div {
+	background: $white;
+	div:nth-of-type(2) {
+		@include flexbox(column, flex-start, stretch);
+	}
+	.stories-screen-navbar {
+		margin-top: 1rem;
+		height: 10vh;
+		width: 100%;
+		z-index: 1000 !important;
+		position: relative;
+		@include flexbox(row, flex-start, center);
+		button {
+			background: transparent;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 1rem;
+			img {
+				height: 1.4rem;
+			}
+		}
+		.more-options {
+			flex: 3;
+			padding-right: 2rem;
+			position: relative;
+			right: 0;
+			@include flexbox(row, flex-end, center);
+		}
+	}
+
+	span {
+		padding: 1rem 0;
+		font-family: 'Circular-Air';
+		p {
+			color: $lumen80 !important;
+			&:first-child {
+				padding-top: 0.8rem;
+				font-size: 1.3rem !important;
+				color: $white !important;
+			}
+			font-size: 1.1rem !important;
+			color: #7e7e8f !important;
+		}
+	}
+	.stories-image-container {
+		padding: 1rem 0;
+		width: 100%;
+		display: flex !important ;
+		justify-content: center !important ;
+		align-items: center !important ;
+		img {
+			height: 70vh;
+			max-width: 95vw;
+			object-fit: cover;
+		}
+	}
+}
+
+// Overriding styles from react-pdf
+.pdf-container,
+.react-pdf__Document,
+.react-pdf__Page,
+.react-pdf__Page__canvas {
+	height: 600px !important;
+	width: 400px !important;
+	@media all and (max-width: 430px) {
+		height: 550px !important;
+		width: 350px !important;
+	}
+}

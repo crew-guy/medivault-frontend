@@ -1,0 +1,26 @@
+@import './mixins/flexbox';
+
+.view-reports-layout {
+	width: 100%;
+	position: relative;
+	height: 100%;
+	position: relative;
+	font-family: 'Circular-Std-Book';
+	&.blurred {
+		filter: blur(3px);
+	}
+}
+
+.add-report-button {
+	position: fixed;
+	bottom: 1.7rem;
+	right: 1.4rem;
+	z-index: 6;
+	background: $vibra100;
+	padding: 1.15rem 2.8rem;
+	color: $lumen10;
+	font-family: 'Circular-Std-Book';
+	font-size: 1.15rem;
+	border-radius: 0.4rem;
+	cursor: pointer;
+}

@@ -1,0 +1,56 @@
+@import './mixins/flexbox';
+
+.footer-wrapper {
+	background: $lumen10;
+}
+
+.white-bar {
+	height: 2rem;
+	width: 100%;
+	background: $lumen10;
+}
+
+.footer {
+	width: 100%;
+	padding: 2rem;
+	background: $lumen10;
+}
+
+.heading-wrapper {
+	width: 20%;
+	// word-wrap:break-word;
+	p {
+		font-family: 'Gilroy-5';
+		color: #898999;
+		opacity: 0.14;
+		font-size: 3rem;
+		line-height: 2.6rem;
+	}
+}
+.farmako-logo {
+	@include flexbox(row, flex-start, center);
+	.logo-img-container {
+		@include flexbox(row, flex-start, center);
+		margin-right: 0.5rem;
+		.logo-img {
+			height: 1.9rem;
+		}
+	}
+	.logo-text {
+		font-family: 'Gilroy-4';
+		font-size: 2rem;
+		color: $vibra100;
+	}
+	margin: 1.7rem 0;
+}
+.reach-us {
+	@include flexbox(column, flex-start, flex-start);
+	a {
+		text-decoration: none;
+		color: #000;
+		color: $blu40;
+		font-size: 1.4rem;
+		margin-bottom: 0.8rem;
+		font-family: 'Circular-Std-Medium';
+	}
+}
