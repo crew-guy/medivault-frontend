@@ -49,8 +49,7 @@ const history=useHistory()
             const uid = user.uid;
             const name = user.displayName || 'MediVault'
             setUser(name, uid, 'jwt')
-            const res = await apiClient.post('/patients', { name, uid })
-            console.log(res)
+            await apiClient.post('/patients', { name, uid })
             await setAuthUser(user as any);
             history.push('/')
           setLoading(false);

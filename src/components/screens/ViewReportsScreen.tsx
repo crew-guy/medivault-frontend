@@ -48,6 +48,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
         }
         (async () => {
             try {
+                console.log(patientId)
                 const fetchedReportsCollection = await retrieveData(patientId)
                 setReportsCollection(fetchedReportsCollection);
             } catch (error) {
