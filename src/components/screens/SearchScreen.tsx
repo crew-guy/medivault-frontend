@@ -1,8 +1,8 @@
 import ReportContainer from '@components/widgets/report-history/ReportContainer';
 import { Report } from '@data/interfaces';
 import algoliasearch from 'algoliasearch';
-import {useSelector} from 'react-redux'
-import {RootState} from '@redux/store';
+// import {useSelector} from 'react-redux'
+// import {RootState} from '@redux/store';
 import {
   InstantSearch,
   SearchBox,
@@ -13,13 +13,11 @@ import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_APP_ID!, process.env.REACT_APP_ALGOLIA_API_KEY!);
 
 function Hit({ hit }: any) {
-    const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
+    // const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
     const {title, date, tags, uuid, files, authorId} = hit
     const report:Report = { title, date, tags, uuid, files, authorId}
-    console.log(report.authorId, patientId)
-    return report.authorId === patientId
-    ? (<ReportContainer report={report} />)
-    : <></>
+    // console.log(report.authorId, patientId)
+    return  (<ReportContainer report={report} />)
 }
 
 function SearchScreen() {
