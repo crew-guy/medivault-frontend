@@ -14,4 +14,4 @@ A simple application patients can use to safely & securely store their medical r
 6. Firebase
 
 
-## App Walkthrough Video - [Link]([url](https://youtu.be/zBlSC2ViJBM))
+## App Walkthrough Video - [Link](https://youtu.be/zBlSC2ViJBM)
