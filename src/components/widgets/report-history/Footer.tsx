@@ -25,7 +25,7 @@ const Footer:React.FC<{setReachedFooter:any}> = ({setReachedFooter}) => {
                     exit={{opacity: 0, y:40}}
                     className="footer">
                     <div className="heading-wrapper">
-                        <p className="heading" >Made with love by</p>
+                        <p className="heading" >Your goto medical safe</p>
                     </div>
                     <motion.div
                         className="farmako-logo">
