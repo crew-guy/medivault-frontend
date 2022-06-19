@@ -23,6 +23,7 @@
     "class-validator": "^0.13.2",
     "classnames": "^2.3.1",
     "craco-alias": "^3.0.1",
+    "firebase": "9.6.11",
     "framer-motion": "^4.1.17",
     "google-protobuf": "^3.12.4",
     "grpc-web": "^1.2.0",

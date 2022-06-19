@@ -21,6 +21,8 @@ import AddReportButton from '@widgets/AddReportButton';
 // import APIClient from "./../../APIClient";
 import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContext';
 import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
+import AuthUserProvider, { useAuth } from '@contexts/AuthContext'
+import { useHistory } from 'react-router-dom';
 
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
     const [reachedFooter, setReachedFooter] = useState<boolean>(false)
@@ -31,20 +33,22 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
         "view-reports-layout": true,
         'blurred': mode === Mode.ADDING
     })
-    console.log(reachedFooter)
 
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
-    const { setUser, setReportsCollection } = AC
-    const patientName = useSelector((state:RootState)=> state.app.user.patientName)
+    const { setReportsCollection } = AC
+    const auth = useAuth()
+    const history = useHistory()
 
     useEffect(() => {
+        console.log(auth.authUser)
+        if (!auth.authUser) {
+            return history.push('/login')
+        }
         (async () => {
             try {
                 const fetchedReportsCollection = await retrieveData(patientId)
                 setReportsCollection(fetchedReportsCollection);
-                // TODO : Implement auth
-                setUser(patientName, 'patientAuthToken');
             } catch (error) {
                 console.error(error)
             } finally {
@@ -76,7 +80,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                     {/* </AnimatePresence> */}
                 </>}
             </Fragment>
-        </BottomUploadContainerProvider>
+            </BottomUploadContainerProvider>
     )
 }
 

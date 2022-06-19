@@ -33,10 +33,10 @@ export const deselectReport = (report: Report) => {
     return (dispatch:any) => dispatch({ type: actions.DESELECT_REPORT, payload:{report}})
 }
 
-export const setUser = (name: string, jwt:string) => {
+export const setUser = (name: string, jwt:string, phoneNumber:string) => {
     return (dispatch: any) => dispatch({
         type: actions.SETTING_USER,
-        payload:{user:{patientName:name, phoneNumber:"9820178330",jwt:jwt}}
+        payload:{user:{patientName:name, phoneNumber:phoneNumber,jwt:jwt}}
     })
 }
 
