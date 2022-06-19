@@ -5,7 +5,7 @@ import ReportYearContainer from './ReportYearContainer';
 
 
 const ReportsWrapper = () => {
-    const collection = useSelector((state: RootState) => state.patient.reportsCollection).reports;
+    const collection = useSelector((state: RootState) => state.app.reportsCollection).reports;
     console.log(collection)
     // const collection = initialReportsCollection.reports;
     const chronologicalCollection = collection.sort((a: any, b: any) => b.date - a.date)

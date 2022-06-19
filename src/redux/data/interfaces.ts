@@ -85,8 +85,17 @@ export interface Story{
 // The state of the entire app
 export interface AppState {
     user: User,
+    doctor: Doctor,
     mode:Mode
     reportsCollection: ReportsCollection,
     selectedReports: Report[]
     uploadedFiles:FileInterface[],
+}
+
+
+export interface Doctor{
+    uuid:string
+    qualification:string
+    imgUrl:string
+    experience:string
 }

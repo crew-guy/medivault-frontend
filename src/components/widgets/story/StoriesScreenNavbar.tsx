@@ -17,7 +17,7 @@ const StoriesScreenNavbar:React.FC<I> = ({story}) => {
     // eslint-disable-next-line
     const [_, setActionSelected] = useState<SelectedAction>(SelectedAction.SHARE)
     const [showOptions, setShowOptions] = useState(false)
-    const mode = useSelector((store: RootState) => store.patient.mode);
+    const mode = useSelector((store: RootState) => store.app.mode);
     const toggleOptions = () => {
         setShowOptions((showOptions)=>!showOptions)
     }

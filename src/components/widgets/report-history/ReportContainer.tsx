@@ -10,7 +10,7 @@ import cx from 'classnames'
 
 const ReportContainer: React.FC<{ report: Report }> = ({ report }) => {
     const [isImagesVisible, setIsImagesVisible] = useState(false);
-    const mode = useSelector((state: RootState) => state.patient.mode);
+    const mode = useSelector((state: RootState) => state.app.mode);
     
     const reportContainerClass = cx({
         "report-container": true,

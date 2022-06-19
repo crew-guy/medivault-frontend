@@ -17,8 +17,8 @@ import BottomUploadReportFilesProvider from '@contexts/BottomUploadReportFilesCo
 
 export default function BottomUploadContainer() {
     const bottomUploadContainerOpen = useBottomUploadContainer() 
-    const mode = useSelector((state: RootState) => state.patient.mode)
-    const uploadedFiles = useSelector((state:RootState)=> state.patient.uploadedFiles)
+    const mode = useSelector((state: RootState) => state.app.mode)
+    const uploadedFiles = useSelector((state:RootState)=> state.app.uploadedFiles)
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
     const { toggleAddMode } = AC

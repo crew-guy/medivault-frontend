@@ -5,12 +5,11 @@ import {useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '@actions/actionCreators'
 import { FileInterface } from '@data/interfaces';
-import defaultThumbnailUrl from '@images/pdf_thumbnail.svg'
 import {useUpdateBottomUploadReportFilesContext} from '@contexts/BottomUploadReportFilesContext'
 import S3FileUpload from 'react-s3';
 
- 
 // var mime = require('mime-types')
+const defaultThumbnailUrl = 'https://medivault-assets.s3.ap-south-1.amazonaws.com/pdf_thumbnail.svg'
 
 const ButtonWrapper:
     React.FC<
@@ -24,10 +23,11 @@ const ButtonWrapper:
     //? This is just an element you can use in coordination with the file uploaded to check whether your uploading was successful from frontend clicking/uploading to saving that in local state        
     // const imageOutputRef = useRef<HTMLImageElement>(null)
     const dispatch: AppDispatch = useDispatch();
-    const uploadedFiles:FileInterface[] = useSelector((store:RootState)=> store.patient.uploadedFiles);
-    const patientId = useSelector((store:RootState)=> store.patient.user.phoneNumber);
+    const uploadedFiles:FileInterface[] = useSelector((store:RootState)=> store.app.uploadedFiles);
+    const patientId = useSelector((store:RootState)=> store.app.user.phoneNumber);
     const AC = bindActionCreators(actionCreators, dispatch);
     const { uploadFile } = AC
+    
     
     const onClickHandler: MouseEventHandler<HTMLDivElement> =() => {
         fileInputRef.current!.click()
@@ -41,7 +41,7 @@ const ButtonWrapper:
             region: 'us-east-1',
             accessKeyId: process.env.REACT_APP_AWS_KEY,
             secretAccessKey: process.env.REACT_APP_AWS_SECRET,
-        }    
+        } 
     
         try {
             const data = await S3FileUpload.uploadFile(file, config)
@@ -58,7 +58,6 @@ const ButtonWrapper:
             if (uploadedFile) {
                 (async () => {
                     const fileLocationInS3 = await uploadFileToS3(uploadedFile)
-                    // imageOutputRef.current?.setAttribute('src', url)
                     uploadFile({ dataUrl: fileLocationInS3, thumbnailUrl: typeOfUploadedFile === "application/pdf" ? defaultThumbnailUrl : fileLocationInS3, fileMimeType: typeOfUploadedFile })
                 })()
                 if (uploadedFiles.length > 0) {
@@ -82,7 +81,7 @@ const ButtonWrapper:
                     ref={fileInputRef}
                     type="file"
                     accept="image/*"
-                    capture="camera"
+                    capture="environment"
                 />
                 :
                 <input

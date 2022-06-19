@@ -20,11 +20,12 @@ import {AnimatePresence} from 'framer-motion'
 import AddReportButton from '@widgets/AddReportButton';
 // import APIClient from "./../../APIClient";
 import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContext';
+import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
     const [reachedFooter, setReachedFooter] = useState<boolean>(false)
-    const patientId = useSelector((state:RootState)=> state.patient.user.phoneNumber)
-    const mode = useSelector((state: RootState) => state.patient.mode);
+    const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
+    const mode = useSelector((state: RootState) => state.app.mode);
     const [loading, setLoading] = useState<boolean>(true)
     const viewReportsClass = cx({
         "view-reports-layout": true,
@@ -34,7 +35,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
     const { setUser, setReportsCollection } = AC
-    const patientName = useSelector((state:RootState)=> state.patient.user.patientName)
+    const patientName = useSelector((state:RootState)=> state.app.user.patientName)
 
     useEffect(() => {
         (async () => {
@@ -63,12 +64,13 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                             <Header isJwt={true}/>
                             <ReportsWrapper/>
                             <AnimatePresence>
-                               {mode !== Mode.SELECTING && !reachedFooter &&
+                               {mode !== Mode.SELECTING &&
                                <AddReportButton/>
                                }
                             </AnimatePresence>
                             <Footer setReachedFooter={setReachedFooter}/>
                         </div>
+                        <BottomNavigationComp/>
                         <BottomUploadContainer/>
                     {/* </AnimatePresence> */}
                 </>}

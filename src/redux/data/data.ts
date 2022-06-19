@@ -1,4 +1,4 @@
-import {User, Mode} from '../data/interfaces'
+import {User, Mode, Doctor} from '../data/interfaces'
 import { apiClient } from '@utils/apiClient';
 
 
@@ -19,8 +19,16 @@ const initialUser: User = {
     jwt: ""
 }
 
+const initialDoctor: Doctor = {
+    uuid: "62ae76abdfc1a35fbac91e4e",
+    qualification:"BSc, MD",
+    imgUrl:"",
+    experience:"30 years of experience in neurosurgery"
+}
+
 export const initialState = {
     user: initialUser,
+    doctor: initialDoctor,
     reportsCollection: {reports: []},
     selectedReports: [],
     mode: Mode.VIEWING,

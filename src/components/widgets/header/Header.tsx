@@ -10,7 +10,8 @@ import {Mode, SelectedAction} from '@data/interfaces'
 import * as actionCreators from '@actions/actionCreators'
 import PatientName from './PatientName'
 import { AnimatePresence } from 'framer-motion'
-
+import SearchIcon from '@mui/icons-material/Search';
+import { useHistory } from 'react-router-dom'
 
 const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
     const [showOptions, setShowOptions] = useState(false)
@@ -24,8 +25,9 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
 
     const [actionSelected, setActionSelected] = useState<SelectedAction>(SelectedAction.SHARE)
 
-    const mode = useSelector((state: RootState) => state.patient.mode)
-    const selectedReports = useSelector((state: RootState) => state.patient.selectedReports)
+    const mode = useSelector((state: RootState) => state.app.mode)
+    const selectedReports = useSelector((state: RootState) => state.app.selectedReports)
+    const history = useHistory()
     return (
         <div className="header">
             {(mode === Mode.VIEWING || mode === Mode.ADDING) &&
@@ -33,6 +35,10 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
                 <>
                     <PatientName isJwt={isJwt}/>
                     <div className="img-container" onClick={toggleOptions}>
+                        <SearchIcon onClick={() => {
+                            console.log('search icon clicked')
+                            history.replace('/search')
+                        }} />
                        <img className="more-options" src={moreIcon} alt=""/>
                     </div>
                     {showOptions &&

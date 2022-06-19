@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import patientReducer from './patientReducer'
+import appReducer from './appReducer'
 
 const reducers = combineReducers({
-    patient: patientReducer,
+    app: appReducer,
 })
 
 export default reducers;

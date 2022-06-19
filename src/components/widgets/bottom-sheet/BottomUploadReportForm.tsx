@@ -25,16 +25,16 @@ const BottomUploadReportForm = () => {
     const setBottomUploadContainer = useUpdateBottomUploadContainer()
     const bottomUploadReportFilesOpen = useBottomUploadReportFilesContext()
     const setBottomUploadReportFilesOpen = useUpdateBottomUploadReportFilesContext()
-    const uploadedFiles = useSelector((store: RootState) => store.patient.uploadedFiles)
+    const uploadedFiles = useSelector((store: RootState) => store.app.uploadedFiles)
     const [form, setForm] = useState<FormInterface>({ reportName: "", reportDate: new Date(), reportType: ReportType.OTHER });
     const [isDisabled, setIsDisabled] = useState<boolean>(true)
     const [date, setDate] = useState<string>(moment(new Date()).format('YYYY-MM-DD'))
-    const patientId = useSelector((store:RootState)=> store.patient.user.phoneNumber);
+    const patientId = useSelector((store:RootState)=> store.app.user.phoneNumber);
 
     // Preparing dispatch actions
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actions, dispatch)
-    const { clearUploadedFiles, toggleAddMode } = AC
+    const { clearUploadedFiles, toggleAddMode, uploadReport } = AC
 
     useEffect(() => {
         // There should atleast be some file uploaded
@@ -55,22 +55,22 @@ const BottomUploadReportForm = () => {
 
     const submitForm = async () => {
         const submission = {
-            date: form.reportDate,
+            date: date,
             title: form.reportName,
             tags: [form.reportType],
             files: uploadedFiles,
             authorId: patientId,
         }
-        // console.log(submission)
+        console.log(submission)
         setBottomUploadContainer(false)
         clearUploadedFiles()
         toggleAddMode()
-        // uploadReport(submission)
         console.log(submission)
         try {
             console.log('submitting response to backend')
             const response = await apiClient.post('/reports',submission)
-            console.log(response)
+            uploadReport(response as any);
+            window.location.reload();
         } catch (error) {
             
         }

@@ -367,7 +367,7 @@
 
 .add-report-button {
   position: fixed;
-  bottom: 1.7rem;
+  bottom: 4rem;
   right: 1.4rem;
   z-index: 6;
   background: #00282d;
@@ -1297,6 +1297,45 @@
 }
 .report-card .tag-icon img.images-hidden {
   transform: rotateZ(0deg);
+}
+
+.ais-SearchBox {
+  width: 100%;
+  padding: 1.2rem;
+  background: #00282d;
+}
+.ais-SearchBox .ais-SearchBox-form {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.ais-SearchBox .ais-SearchBox-form .ais-SearchBox-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  background: #feffff;
+  color: #00282d;
+  font-size: 1.2rem;
+  font-family: "Circular-Std-Book";
+}
+.ais-SearchBox .ais-SearchBox-form .ais-SearchBox-input:focus {
+  outline: none;
+}
+.ais-SearchBox .ais-SearchBox-form .ais-SearchBox-submit, .ais-SearchBox .ais-SearchBox-form .ais-SearchBox-reset {
+  height: 100%;
+  padding: 0.5rem;
+  background: #115760;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+}
+.ais-SearchBox .ais-SearchBox-form .ais-SearchBox-submit svg, .ais-SearchBox .ais-SearchBox-form .ais-SearchBox-reset svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #feffff;
 }
 
 * {

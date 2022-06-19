@@ -26,8 +26,6 @@ const ReportCard: React.FC<ReportCardInterface> = (
         'images-hidden':!isImagesVisible
     })
 
-    console.log(report)
-
     return (
         <>
             <div className="report-card" onClick={toggleImageVisibility} >

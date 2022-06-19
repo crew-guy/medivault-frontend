@@ -3,9 +3,10 @@ import {useSelector} from 'react-redux'
 import {RootState} from '@redux/store'
 import cx from 'classnames'
 import {motion, AnimatePresence} from 'framer-motion'
+// import APIClient from "./../../../APIClient";
 
 const PatientName: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
-    const user = useSelector((state: RootState) => state.patient.user)
+    const user = useSelector((state: RootState) => state.app.user)
     const [isVisible, setIsVisible] = useState<boolean>(false)
 
     const toggleVisible = () => {
@@ -20,8 +21,6 @@ const PatientName: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
     const handleLogout = () => {
         // APIClient.users.logout();
     }
-
-    console.log(user.patientName)
 
     return (
         <div className="dropdown-container">

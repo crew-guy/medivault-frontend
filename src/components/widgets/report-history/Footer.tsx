@@ -34,10 +34,6 @@ const Footer:React.FC<{setReachedFooter:any}> = ({setReachedFooter}) => {
                         </div>
                         <p className="logo-text" >medivault</p>
                     </motion.div>
-                    <div className="reach-us">
-                        <a href="https://wa.me/918851267166">Contact us</a>
-                        <a href="https://farmako.in">Visit Website</a>
-                    </div>
                 </motion.div>}
             </AnimatePresence>
         </div>

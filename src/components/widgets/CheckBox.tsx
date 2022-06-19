@@ -13,7 +13,7 @@ import { Report } from '@data/interfaces'
 const CheckBox:React.FC<{report:Report}> = ({report}) => {
     const [isChecked,setIsChecked] = useState<boolean>(false)
     const dispatch: AppDispatch = useDispatch()
-    // const selectedReports = useSelector((state:RootState)=>state.patient.selectedReports)
+    // const selectedReports = useSelector((state:RootState)=>state.app.selectedReports)
     
     const AC = bindActionCreators(actionCreators, dispatch)
     const {selectReport,deselectReport} = AC

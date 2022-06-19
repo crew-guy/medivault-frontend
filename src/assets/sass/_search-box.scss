@@ -1,0 +1,35 @@
+.ais-SearchBox{
+    width:100%;
+    padding:1.2rem;
+    background:$vibra100;
+    .ais-SearchBox-form{
+        @include flexbox(row, stretch, center);
+        column-gap:1rem;
+        .ais-SearchBox-input{
+            width:100%;
+            padding:0.5rem;
+            border:none;
+            background:$lumen10;
+            color:$vibra100;
+            font-size:1.2rem;
+            font-family:'Circular-Std-Book';
+            &:focus{
+                outline:none;
+            }
+        }
+        .ais-SearchBox-submit,.ais-SearchBox-reset{
+            height:100%;
+            padding:0.5rem;
+            background: #115760;
+            border:none;
+            outline:none;
+            border-radius:0.5rem;
+            svg{
+                width:1.5rem;
+                height:1.5rem;
+                fill:$lumen10;
+            }
+        }
+
+    }
+}

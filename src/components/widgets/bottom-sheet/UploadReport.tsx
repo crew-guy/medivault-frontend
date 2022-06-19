@@ -9,8 +9,8 @@ import {useUpdateBottomUploadReportFilesContext} from '@contexts/BottomUploadRep
 const UploadReport = () => {
     
     const setBottomUploadReportFilesOpen = useUpdateBottomUploadReportFilesContext()
-    // const patientId = useSelector((store:RootState)=>(store.patient.reportsCollection as any)[0].authorId)
-    const uploadFiles = useSelector((store:RootState)=>store.patient.uploadedFiles)
+    // const patientId = useSelector((store:RootState)=>(store.app.reportsCollection as any)[0].authorId)
+    const uploadFiles = useSelector((store:RootState)=>store.app.uploadedFiles)
     return (
 
         <div className="upload-report-form">
