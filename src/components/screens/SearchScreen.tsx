@@ -5,8 +5,8 @@ import {
   InstantSearch,
   SearchBox,
   Hits,
-  Highlight,
 } from 'react-instantsearch-hooks-web';
+import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 
 const searchClient = algoliasearch(process.env.REACT_APP_ALGOLIA_APP_ID!, process.env.REACT_APP_ALGOLIA_API_KEY!);
 
@@ -23,7 +23,9 @@ function SearchScreen() {
   return (
     <InstantSearch searchClient={searchClient} indexName="report_text">
       <SearchBox className='search-input' />
+      <p style={{padding:'1rem', fontSize:'1.3rem'}} className="logo-text">Search through all the text in all your reports</p>
       <Hits hitComponent={Hit} />
+      <BottomNavigationComp/>
     </InstantSearch>
   );
 }

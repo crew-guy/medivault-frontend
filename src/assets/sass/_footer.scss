@@ -36,12 +36,12 @@
 			height: 1.9rem;
 		}
 	}
-	.logo-text {
-		font-family: 'Gilroy-4';
-		font-size: 2rem;
-		color: $vibra100;
-	}
 	margin: 1.7rem 0;
+}
+.logo-text {
+	font-family: 'Gilroy-4';
+	font-size: 2rem;
+	color: $vibra100;
 }
 .reach-us {
 	@include flexbox(column, flex-start, flex-start);

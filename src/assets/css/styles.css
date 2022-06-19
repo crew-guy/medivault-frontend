@@ -857,7 +857,8 @@
 .farmako-logo .logo-img-container .logo-img {
   height: 1.9rem;
 }
-.farmako-logo .logo-text {
+
+.logo-text {
   font-family: "Gilroy-4";
   font-size: 2rem;
   color: #00282d;
