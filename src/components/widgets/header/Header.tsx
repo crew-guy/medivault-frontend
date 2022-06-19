@@ -10,7 +10,6 @@ import {Mode, SelectedAction} from '@data/interfaces'
 import * as actionCreators from '@actions/actionCreators'
 import PatientName from './PatientName'
 import { AnimatePresence } from 'framer-motion'
-import { useHistory } from 'react-router-dom'
 
 const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
     const [showOptions, setShowOptions] = useState(false)
@@ -26,7 +25,6 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
 
     const mode = useSelector((state: RootState) => state.app.mode)
     const selectedReports = useSelector((state: RootState) => state.app.selectedReports)
-    const history = useHistory()
     return (
         <div className="header">
             {(mode === Mode.VIEWING || mode === Mode.ADDING) &&

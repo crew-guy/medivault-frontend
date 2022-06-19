@@ -31,6 +31,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
         "view-reports-layout": true,
         'blurred': mode === Mode.ADDING
     })
+    console.log(reachedFooter)
 
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
