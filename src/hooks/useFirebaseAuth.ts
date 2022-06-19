@@ -49,13 +49,13 @@ const history=useHistory()
           const uid = user.uid;
           setUser(user.displayName || 'MediVault', uid, 'jwt')
             await setAuthUser(user as any);
-            history?.push('/')
+            history.push('/')
           setLoading(false);
           // ...
         } else {
           // User is signed out
           setAuthUser(null)
-          history?.push('/login')
+          history.push('/login')
           setLoading(false)
         }
       })
