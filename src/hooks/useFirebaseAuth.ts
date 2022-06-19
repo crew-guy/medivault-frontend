@@ -41,13 +41,14 @@ const history=useHistory()
       signOut(firebaseAuth).then(clear);
 
     useEffect(() => {
-      const unsubscribe = onAuthStateChanged(firebaseAuth,async (user) => {
+      const unsubscribe = onAuthStateChanged(firebaseAuth, async (user) => {
         if (user) {
 
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-            const uid = user.uid;
-            const name = user.displayName || 'MediVault'
+            const uid = await user.uid;
+            const name = await user.displayName || 'MediVault'
+            console.log(uid, name, 'reset name & uid')
             setUser(name, uid, 'jwt')
             await apiClient.post('/patients', { name, uid })
             await setAuthUser(user as any);
@@ -62,7 +63,8 @@ const history=useHistory()
         }
       })
       return () => unsubscribe();
-    }, [history, setUser]);
+    //   eslint-disable-next-line
+    }, [setAuthUser]);
 
     return {
       authUser,
