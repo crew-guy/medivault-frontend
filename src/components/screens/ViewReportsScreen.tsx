@@ -25,6 +25,7 @@ import { useAuth } from '@contexts/AuthContext'
 import { useHistory } from 'react-router-dom';
 
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
+    const [reachedFooter, setReachedFooter] = useState<boolean>(false)
     const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
     const mode = useSelector((state: RootState) => state.app.mode);
     const [loading, setLoading] = useState<boolean>(true)
@@ -32,6 +33,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
         "view-reports-layout": true,
         'blurred': mode === Mode.ADDING
     })
+    console.log(reachedFooter)
 
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
@@ -72,7 +74,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                                <AddReportButton/>
                                }
                             </AnimatePresence>
-                            <Footer setReachedFooter={false}/>
+                            <Footer setReachedFooter={setReachedFooter}/>
                         </div>
                         <BottomNavigationComp/>
                         <BottomUploadContainer/>
