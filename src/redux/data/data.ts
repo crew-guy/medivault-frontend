@@ -8,7 +8,6 @@ export const retrieveData = async (patientId:string) => {
         const parsedReportsCollection = reportsCollection.data.map((report: any) => ({...report, date: new Date(report.date)}))
         return parsedReportsCollection
     } catch (error) {
-        console.log(error)
         throw error
     }
 }

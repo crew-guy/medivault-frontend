@@ -61,13 +61,10 @@ const BottomUploadReportForm = () => {
             files: uploadedFiles,
             authorId: patientId,
         }
-        console.log(submission)
         setBottomUploadContainer(false)
         clearUploadedFiles()
         toggleAddMode()
-        console.log(submission)
         try {
-            console.log('submitting response to backend')
             const response = await apiClient.post('/reports',submission)
             uploadReport(response as any);
             window.location.reload();

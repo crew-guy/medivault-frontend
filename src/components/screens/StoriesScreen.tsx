@@ -21,7 +21,8 @@ const StoriesScreen = () => {
     const storiesArray:any = currentStories.map((story:Story ,i) => {
         return (
             {
-                content: ({ action, isPaused }:any) => {
+                content: ({ action, isPaused }: any) => {
+                    console.log(story.url, story.fileMimeType)
                     return (
                         <>
                             <StoriesScreenNavbar story={story}/>                            
