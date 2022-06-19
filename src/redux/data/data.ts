@@ -15,7 +15,7 @@ export const retrieveData = async (patientId:string) => {
 
 const initialUser: User = {
     patientName: "Demo User",
-    phoneNumber: "9820178330",
+    phoneNumber: "",
     jwt: ""
 }
 
