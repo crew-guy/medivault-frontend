@@ -21,11 +21,10 @@ import AddReportButton from '@widgets/AddReportButton';
 // import APIClient from "./../../APIClient";
 import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContext';
 import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
-import AuthUserProvider, { useAuth } from '@contexts/AuthContext'
+import { useAuth } from '@contexts/AuthContext'
 import { useHistory } from 'react-router-dom';
 
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
-    const [reachedFooter, setReachedFooter] = useState<boolean>(false)
     const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
     const mode = useSelector((state: RootState) => state.app.mode);
     const [loading, setLoading] = useState<boolean>(true)
@@ -73,7 +72,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                                <AddReportButton/>
                                }
                             </AnimatePresence>
-                            <Footer setReachedFooter={setReachedFooter}/>
+                            <Footer setReachedFooter={false}/>
                         </div>
                         <BottomNavigationComp/>
                         <BottomUploadContainer/>

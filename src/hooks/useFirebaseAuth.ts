@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react'
 import {firebaseAuth} from '@utils/firebase';
-import {onAuthStateChanged, signOut, getRedirectResult, GoogleAuthProvider, signInWithPopup, signInWithRedirect} from 'firebase/auth'
+import {onAuthStateChanged, signOut, getRedirectResult, GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
 import {bindActionCreators} from 'redux';
 import * as actionCreators from '@actions/actionCreators'
 import { useDispatch } from 'react-redux';
 import { AppDispatch} from '@redux/store';
 import { useHistory } from 'react-router-dom';
+import {apiClient} from '../utils/apiClient'
 
 export default function useFirebaseAuth() {
   const [authUser, setAuthUser] = useState(null);
   const [loading, setLoading] = useState(true);
-//   console.log(history)
   const dispatch: AppDispatch = useDispatch()
 const AC = bindActionCreators(actionCreators, dispatch);
 const { setUser } = AC
@@ -46,8 +46,11 @@ const history=useHistory()
 
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-          const uid = user.uid;
-          setUser(user.displayName || 'MediVault', uid, 'jwt')
+            const uid = user.uid;
+            const name = user.displayName || 'MediVault'
+            setUser(name, uid, 'jwt')
+            const res = await apiClient.post('/patients', { name, uid })
+            console.log(res)
             await setAuthUser(user as any);
             history.push('/')
           setLoading(false);
@@ -60,7 +63,7 @@ const history=useHistory()
         }
       })
       return () => unsubscribe();
-    }, []);
+    }, [history, setUser]);
 
     return {
       authUser,

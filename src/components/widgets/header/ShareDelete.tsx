@@ -19,10 +19,10 @@ const ShareDelete:React.FC<I> = ({setActionSelected}) => {
         toggleSelectionMode();
         setActionSelected(SelectedAction.SHARE)
     }
-    const handleDelete = () => {
-        toggleSelectionMode();
-        setActionSelected(SelectedAction.DELETE)
-    }
+    // const handleDelete = () => {
+    //     toggleSelectionMode();
+    //     setActionSelected(SelectedAction.DELETE)
+    // }
 
     return (
         <motion.div
