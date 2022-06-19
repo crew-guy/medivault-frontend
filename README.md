@@ -1,11 +1,14 @@
-## Aliased imports in React + TS
+## Description
 
-[Reference Link](https://adrianmanduc.medium.com/path-aliases-in-create-react-app-v4-without-ejecting-3d7ac5f2c86a)
+A simple application patients can use to safely & securely store their medical records in a centralized database, that can be accessed from all platforms
 
-craco.config.js => File added to compile aliased paths into actual paths 
-paths.json => File added to get intellisense for aliased imports]
 
-## Example url for each patient 
 
-Dev url = http://localhost:3000
-Prod url = https://medivault.fallow.in
+## Stack
+
+1. React
+2. TypeScript
+3. S3
+4. Algoliasearch
+5. Redux
+6. Firebase
