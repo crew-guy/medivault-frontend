@@ -1,10 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actionCreators from '@actions/actionCreators'
-import { AppDispatch } from '@redux/store'
-import {SelectedAction} from '@data/interfaces'
+import { AppDispatch, RootState } from '@redux/store'
+import { Report, SelectedAction, FileInterface } from '@data/interfaces'
+
 
 interface I{
     setActionSelected:(action:SelectedAction)=>void

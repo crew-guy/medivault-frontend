@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux'
 import {useSelector, useDispatch} from 'react-redux'
 import {AppDispatch, RootState} from '@redux/store'
 import ShareDelete from './ShareDelete'
-import {Mode, SelectedAction} from '@data/interfaces'
+import {Mode, Report, FileInterface, SelectedAction} from '@data/interfaces'
 import * as actionCreators from '@actions/actionCreators'
 import PatientName from './PatientName'
 import { AnimatePresence } from 'framer-motion'
@@ -53,9 +53,11 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
                             }}> {`< Back to Viewing`}</p>
                             <p className="selected-items">{selectedReports.length} {selectedReports.length === 1 ? "item" : "items"}</p>
                         </div>
-                        <p className=" action-bar" onClick={() => {
+                        <p className=" action-bar" onClick={async() => {
                             if (actionSelected === SelectedAction.SHARE) {
-                                navigator.share(selectedReports[0].files[0].dataUrl)
+                                const masterString = selectedReports.map((selectedReport: Report) => selectedReport.files.map((file: FileInterface) => `${selectedReport.title}-${file.dataUrl}`).join(" ")).join(" ")
+                                console.log(masterString);
+                                await navigator?.share({title: 'My Reports', text:masterString})
                             }
                         }}>{actionSelected}</p>
                     </>
