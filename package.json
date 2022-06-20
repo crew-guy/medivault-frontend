@@ -2,7 +2,7 @@
   "name": "med-hist-screen",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://farmako.in",
+  "proxy": "https://fallow.in",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@emotion/react": "^11.9.3",

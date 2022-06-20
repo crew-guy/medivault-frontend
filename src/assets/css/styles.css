@@ -840,21 +840,21 @@
   line-height: 2.6rem;
 }
 
-.farmako-logo {
+.medivault-logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   margin: 1.7rem 0;
 }
-.farmako-logo .logo-img-container {
+.medivault-logo .logo-img-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   margin-right: 0.5rem;
 }
-.farmako-logo .logo-img-container .logo-img {
+.medivault-logo .logo-img-container .logo-img {
   height: 1.9rem;
 }
 

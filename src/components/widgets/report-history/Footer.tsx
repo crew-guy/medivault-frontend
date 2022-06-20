@@ -28,7 +28,7 @@ const Footer:React.FC<{setReachedFooter:any}> = ({setReachedFooter}) => {
                         <p className="heading" >Your goto medical safe</p>
                     </div>
                     <motion.div
-                        className="farmako-logo">
+                        className="medivault-logo">
                         <div className="logo-img-container">
                             <img className="logo-img" src={logoDark} alt="MediVault" />
                         </div>
