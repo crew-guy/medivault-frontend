@@ -38,7 +38,7 @@ const LoginScreen = () => {
                 <Button
                     onClick={() => {
                         (window as any).location = "https://youtu.be/zBlSC2ViJBM" as any
-                    }} endIcon={<GoogleIcon />}>How to use app</Button>
+                    }} endIcon={<PlayCircleFilledWhiteIcon />}>How to use app</Button>
             </div>
         </div>
     )
