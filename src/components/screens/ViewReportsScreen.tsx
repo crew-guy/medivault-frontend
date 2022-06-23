@@ -63,7 +63,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                 {!loading && <>
                     {/* <AnimatePresence key={'top level'} > */}
                         <div className={viewReportsClass}>
-                            <Header isJwt={true}/>
+                            <Header/>
                             <ReportsWrapper/>
                             <AnimatePresence>
                                {mode !== Mode.SELECTING &&

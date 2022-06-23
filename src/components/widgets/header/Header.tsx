@@ -12,7 +12,7 @@ import PatientName from './PatientName'
 import { AnimatePresence } from 'framer-motion'
 import { apiClient } from '@utils/apiClient'
 
-const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
+const Header: React.FC = () => {
     const [showOptions, setShowOptions] = useState(false)
     const toggleOptions = () => {
         setShowOptions((showOptions) => !showOptions)

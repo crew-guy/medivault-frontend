@@ -31,10 +31,10 @@ export const deselectReport = (report: Report) => {
     return (dispatch:any) => dispatch({ type: actions.DESELECT_REPORT, payload:{report}})
 }
 
-export const setUser = (name: string, emailAddress:string,jwt:string) => {
+export const setUser = (name: string, emailAddress:string) => {
     return (dispatch: any) => dispatch({
         type: actions.SETTING_USER,
-        payload:{user:{patientName:name, emailAddress:emailAddress,jwt:jwt}}
+        payload:{user:{patientName:name, emailAddress:emailAddress}}
     })
 }
 

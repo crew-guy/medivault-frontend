@@ -15,7 +15,6 @@ export const retrieveData = async (patientId:string) => {
 const initialUser: User = {
     patientName: "Demo User",
     emailAddress: "",
-    jwt: ""
 }
 
 const initialDoctor: Doctor = {
