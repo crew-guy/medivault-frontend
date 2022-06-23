@@ -48,7 +48,6 @@ const history=useHistory()
             const email = await user.email! || "test@example.com";
             const name = await user.displayName || 'MediVault'
             setUser(name, email)
-            console.log(name, email)
             await apiClient.post('/patients', { name, email })
             await setAuthUser(user as any);
             history.push('/')
