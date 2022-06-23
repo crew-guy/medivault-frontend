@@ -20,10 +20,10 @@ const ShareDelete:React.FC<I> = ({setActionSelected}) => {
         toggleSelectionMode();
         setActionSelected(SelectedAction.SHARE)
     }
-    // const handleDelete = () => {
-    //     toggleSelectionMode();
-    //     setActionSelected(SelectedAction.DELETE)
-    // }
+    const handleDelete = () => {
+        toggleSelectionMode();
+        setActionSelected(SelectedAction.DELETE)
+    }
 
     return (
         <motion.div
@@ -33,7 +33,7 @@ const ShareDelete:React.FC<I> = ({setActionSelected}) => {
             // "share-delete" class has been added on all three HTML elements to only fire event when one of these is clicked
             className="share-delete share-delete-container" >
                 <button onClick={handleShare} className="share-delete action-button top" >Share</button>
-                {/* <button onClick={handleDelete} className="share-delete action-button bottom" >Delete</button> */}
+                <button onClick={handleDelete} className="share-delete action-button bottom" >Delete</button>
         </motion.div>
     )
 }

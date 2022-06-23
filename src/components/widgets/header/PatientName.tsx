@@ -3,11 +3,13 @@ import {useSelector} from 'react-redux'
 import {RootState} from '@redux/store'
 import cx from 'classnames'
 import {motion, AnimatePresence} from 'framer-motion'
+import useFirebaseAuth from '../../../hooks/useFirebaseAuth'
 // import APIClient from "./../../../APIClient";
 
-const PatientName: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
+const PatientName: React.FC = () => {
     const user = useSelector((state: RootState) => state.app.user)
     const [isVisible, setIsVisible] = useState<boolean>(false)
+    const { signOutUser } = useFirebaseAuth()
 
     const toggleVisible = () => {
         setIsVisible((prevIsVisible: boolean) => !prevIsVisible)
@@ -19,15 +21,13 @@ const PatientName: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
     })
 
     const handleLogout = () => {
-        // APIClient.users.logout();
+        signOutUser()
     }
 
     return (
         <div className="dropdown-container">
             <p className="patient-name">{user.patientName}</p>
-            {isJwt
-                ? <Fragment />
-                : <Fragment>
+                <Fragment>
                     <div onClick={toggleVisible} className={dropdownArrowClassName}></div>
                     <AnimatePresence>
                         {isVisible &&
@@ -42,7 +42,7 @@ const PatientName: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
                         </motion.div>
                         }
                     </AnimatePresence>
-                </Fragment>}
+                </Fragment>
         </div>
     )
 }

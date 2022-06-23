@@ -10,6 +10,7 @@ import {Mode, Report, FileInterface, SelectedAction} from '@data/interfaces'
 import * as actionCreators from '@actions/actionCreators'
 import PatientName from './PatientName'
 import { AnimatePresence } from 'framer-motion'
+import { apiClient } from '@utils/apiClient'
 
 const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
     const [showOptions, setShowOptions] = useState(false)
@@ -30,7 +31,7 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
             {(mode === Mode.VIEWING || mode === Mode.ADDING) &&
             (
                 <>
-                    <PatientName isJwt={isJwt}/>
+                    <PatientName/>
                     <div className="img-container" onClick={toggleOptions}>
                        <img className="more-options" src={moreIcon} alt=""/>
                     </div>
@@ -58,6 +59,8 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
                                 const masterString = selectedReports.map((selectedReport: Report) => selectedReport.files.map((file: FileInterface) => `${selectedReport.title}-${file.dataUrl}`).join(" ")).join(" ")
                                 await navigator?.share({title: 'My Reports', text:masterString})
                                 await navigator.clipboard.writeText(masterString)
+                            } else if (actionSelected === SelectedAction.DELETE) {
+                                await apiClient.delete('/reports', {data : selectedReports.map((selectedReport:Report) => selectedReport.uuid)})
                             }
                         }}>{actionSelected}</p>
                     </>
