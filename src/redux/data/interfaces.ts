@@ -49,7 +49,7 @@ export enum ReportType{
 //? Interface for the currently logged in user 
 export interface User{
     patientName: string, 
-    phoneNumber?: string, // phone number can be uuid
+    emailAddress?: string, // phone number can be uuid
     jwt:string // jwt can be uuid
 }
 
