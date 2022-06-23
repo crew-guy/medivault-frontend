@@ -22,7 +22,6 @@ import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContex
 import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 import { useAuth } from '@contexts/AuthContext'
 import { useHistory } from 'react-router-dom';
-
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
     const [reachedFooter, setReachedFooter] = useState<boolean>(false)
     const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
