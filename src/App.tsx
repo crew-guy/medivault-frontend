@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import './assets/css/styles.css';
 // import ViewReportsScreen from '@components/screens/ViewReports';
 import ViewReportsScreen from './components/screens/ViewReportsScreen';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import StoriesScreen from '@components/screens/StoriesScreen';
 import LoginScreen from '@components/screens/LoginScreen';
 import SearchScreen from '@components/screens/SearchScreen';

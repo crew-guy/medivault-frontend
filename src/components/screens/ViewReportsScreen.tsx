@@ -7,15 +7,10 @@ import {Mode} from '@data/interfaces'
 import BottomUploadContainer from '@components/widgets/bottom-sheet/BottomUploadContainer';
 import cx from 'classnames'
 import Footer from '@components/widgets/report-history/Footer';
-// import {useHistory} from 'react-router-dom'
-// import {useLocation} from 'react-router-dom'
 import {bindActionCreators} from 'redux';
 import * as actionCreators from '@actions/actionCreators'
 import {retrieveData} from '@data/data'
 import PreloaderScreen from './PreloaderScreen';
-// eslint-disable-next-line
-// import mixpanel from 'mixpanel-browser'
-// import jwt_decode from "jwt-decode";
 import {AnimatePresence} from 'framer-motion'
 import AddReportButton from '@widgets/AddReportButton';
 import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContext';
@@ -33,7 +28,6 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
     const { setReportsCollection } = AC
-    const reports = useSelector((state:RootState)=> state.app.reportsCollection.reports)
     const auth = useAuth()
     const history = useHistory()
 
@@ -42,7 +36,6 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
             return history.push('/login')
         }
         (async () => {
-            if(!reports.length)
             try {
                 const fetchedReportsCollection = await retrieveData(patientId)
                 setReportsCollection(fetchedReportsCollection);
@@ -54,7 +47,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
             }
         })()
         // eslint-disable-next-line
-    }, [reports])
+    }, [])
 
     return (
         <BottomUploadContainerProvider>

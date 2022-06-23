@@ -27,7 +27,7 @@ const StoriesScreenNavbar:React.FC<I> = ({story}) => {
         <button className="back-arrow" onClick={(e) => {
             e.stopPropagation()
             e.preventDefault();
-            history.goBack()
+            history.replace('/')
         }} >
             <img src={backArrow} alt="" />
         </button>
