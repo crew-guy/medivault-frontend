@@ -7,10 +7,8 @@ import ReportYearContainer from './ReportYearContainer';
 const ReportsWrapper = () => {
     const collection = useSelector((state: RootState) => state.app.reportsCollection).reports;
     const chronologicalCollection = collection?.sort((a: any, b: any) => b.date - a.date)
-    console.log(chronologicalCollection)
     const bucketedByYear: any = new Map();
     chronologicalCollection?.forEach((report: any, i: any) => {
-        console.log(report, report?.date)
         if (report?.date?.getFullYear()) {
             const yearNum = report?.date?.getFullYear();
             if (!bucketedByYear.get(yearNum)) {

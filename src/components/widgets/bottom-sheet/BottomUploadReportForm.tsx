@@ -66,11 +66,12 @@ const BottomUploadReportForm = () => {
         toggleAddMode()
         setBottomUploadContainer(false)
         try {
-            const toastId = toast.loading('Adding file...');
+            const toastId = toast.loading('Adding record...');
             const response = await apiClient.post('/reports', submission)
             toast.dismiss(toastId)
             toast.success('Successfully uploaded record!')
             uploadReport(response as any);
+            window.location.reload()
         } catch (error) {
             
         }
