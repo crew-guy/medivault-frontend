@@ -4,7 +4,6 @@ import { apiClient } from '@utils/apiClient';
 
 export const retrieveData = async (patientId:string) => {
     try {
-        console.log(patientId)
         const reportsCollection: any = await apiClient.get(`/reports/${patientId}`)
         const parsedReportsCollection = reportsCollection.data.map((report: any) => ({...report, date: new Date(report.date)}))
         return parsedReportsCollection

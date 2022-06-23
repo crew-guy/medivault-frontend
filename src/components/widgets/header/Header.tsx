@@ -56,7 +56,6 @@ const Header: React.FC<{ isJwt: Boolean }> = ({isJwt}) => {
                         <p className=" action-bar" onClick={async() => {
                             if (actionSelected === SelectedAction.SHARE) {
                                 const masterString = selectedReports.map((selectedReport: Report) => selectedReport.files.map((file: FileInterface) => `${selectedReport.title}-${file.dataUrl}`).join(" ")).join(" ")
-                                console.log(masterString);
                                 await navigator?.share({title: 'My Reports', text:masterString})
                                 await navigator.clipboard.writeText(masterString)
                             }

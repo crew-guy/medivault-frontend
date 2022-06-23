@@ -22,14 +22,12 @@ export const toggleSelectionMode = () => {
 }
 
 export const selectReport = (report:Report) => {
-    // console.log(report)
     return (dispatch: any) => dispatch({
         type: actions.SELECT_REPORT,
         payload: { report }
     })
 }
 export const deselectReport = (report: Report) => {
-    // console.log(report)
     return (dispatch:any) => dispatch({ type: actions.DESELECT_REPORT, payload:{report}})
 }
 

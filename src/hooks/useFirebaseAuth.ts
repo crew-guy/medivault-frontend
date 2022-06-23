@@ -27,7 +27,6 @@ const history=useHistory()
     getRedirectResult(firebaseAuth).then(async function (r) {
       if (!authUser) {
         // User not logged in, start login.
-        console.log('trying to sign in with popup')
         signInWithPopup(firebaseAuth, provider).then(()=>{setLoading(false)})
       } else {
       }
@@ -48,7 +47,6 @@ const history=useHistory()
           // https://firebase.google.com/docs/reference/js/firebase.User
             const uid = await user.uid;
             const name = await user.displayName || 'MediVault'
-            console.log(uid, name, 'reset name & uid')
             setUser(name, uid, 'jwt')
             await apiClient.post('/patients', { name, uid })
             await setAuthUser(user as any);

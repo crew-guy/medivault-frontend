@@ -16,7 +16,6 @@ const PDFViewer = ({pdfSrc}:any) => {
   function onDocumentLoadSuccess({ numPages }:any) {
     setNumPages(numPages);
   }
-  console.log(pdfSrc)
 
   return (
     <div className="pdf-container">

@@ -98,7 +98,6 @@ export default ReportYearContainer
 //     //     }
 //     // })
 //     // return bucketedByMonth.map((elem: Report[]) => {
-//     //     console.log(elem)
 //     //     if (!elem) {
 //     //         return [];
 //     //     } else {

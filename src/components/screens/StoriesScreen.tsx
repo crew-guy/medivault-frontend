@@ -22,7 +22,6 @@ const StoriesScreen = () => {
         return (
             {
                 content: ({ action, isPaused }: any) => {
-                    console.log(story.url, story.fileMimeType)
                     return (
                         <>
                             <StoriesScreenNavbar story={story}/>                            

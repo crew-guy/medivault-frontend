@@ -47,7 +47,6 @@ const ButtonWrapper:
             const data = await S3FileUpload.uploadFile(file, config)
             return data.location
         } catch (error) {
-            console.log(error)
         }
     }
 

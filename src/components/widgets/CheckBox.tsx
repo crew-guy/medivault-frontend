@@ -30,7 +30,6 @@ const CheckBox:React.FC<{report:Report}> = ({report}) => {
             setIsChecked(true);
             selectReport(report);
         }
-        // console.log(selectedReports)
     }
 
     return (

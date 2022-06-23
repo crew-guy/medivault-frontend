@@ -16,7 +16,6 @@ function Hit({ hit }: any) {
     const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
     const {title, date, tags, uuid, files, authorId} = hit
     const report:Report = { title, date, tags, uuid, files, authorId}
-    console.log(report.authorId, patientId)
     return report.authorId === patientId
     ? (<ReportContainer report={report} />)
     : <></>

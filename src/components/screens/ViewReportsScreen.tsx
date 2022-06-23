@@ -33,7 +33,6 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
         "view-reports-layout": true,
         'blurred': mode === Mode.ADDING
     })
-    console.log(reachedFooter)
 
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
@@ -42,13 +41,11 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
     const history = useHistory()
 
     useEffect(() => {
-        console.log(auth.authUser)
         if (!auth.authUser) {
             return history.push('/login')
         }
         (async () => {
             try {
-                console.log(patientId)
                 const fetchedReportsCollection = await retrieveData(patientId)
                 setReportsCollection(fetchedReportsCollection);
             } catch (error) {

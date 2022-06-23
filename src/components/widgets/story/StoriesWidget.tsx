@@ -17,21 +17,18 @@ const StoriesWidget = ({storiesArray}:any) => {
     // })
 
     // function playinterval(){
-    //     console.log(count, 'playing interval')
     //     interval = setTimeout(function(){updateCount();},TIME_PER_STORY); 
     //     return false;
     //   }
       
     //   function stopinterval(){
     //       clearTimeout(interval);
-    //       console.log('interval stopped')
     //     return false;
     // }
 
     
     useEffect(() => {
         if (count >= storiesArray.length || count < 0) {
-            console.log(count, storiesArray.length)
             history.goBack()
         } else {
             // Effort to have no gradually increasing progress bar but just a filled static dash showing current story selected 
@@ -47,7 +44,6 @@ const StoriesWidget = ({storiesArray}:any) => {
         <div className="stories-container" ref={storiesContainerRef} onClick={(e: any) => {
             e.stopPropagation()
             const left = (window.innerWidth / 2) > e.clientX
-            console.log(left)
             if (left) {
                 setCount((prevCount: number) => prevCount - 1)
             }
@@ -61,10 +57,8 @@ const StoriesWidget = ({storiesArray}:any) => {
                 height={window.innerHeight}
                 stories={storiesArray}
                 // onStoryStart={() => {
-                //     console.log(count, 'before')
                 //     count++;
                 //     playinterval()
-                //     console.log(count, 'after')
                 // }}
                 currentIndex={count}
                 // onStoryEnd={() => {

@@ -9,7 +9,6 @@ const ReportsWrapper = () => {
     // const collection = initialReportsCollection.reports;
     const chronologicalCollection = collection.sort((a: any, b: any) => b.date - a.date)
     // const arrangeReportsByMonth = getReportsByMonth(chronologicalCollection)
-    // console.log(arrangeReportsByMonth)
     const bucketedByYear: any = new Map();
     chronologicalCollection.forEach((report: any, i: any) => {
         const yearNum = report.date.getFullYear();
@@ -20,7 +19,6 @@ const ReportsWrapper = () => {
             bucketedByYear.set(yearNum, { ...existingValue, reports: [...existingValue.reports, report] })
         }
     });
-    // console.log(bucketedByYear)
     const yearlyReportsArray:any[] = [];
     const yearKeyArray:string[] = [];
     bucketedByYear.forEach((value: any, key: any) => yearlyReportsArray.push(value));
@@ -30,7 +28,6 @@ const ReportsWrapper = () => {
         <div className="reports-wrapper">
             {
                 yearlyReportsArray.map((object, i) => {
-                    // console.log(object)
                     return (<ReportYearContainer key={i} index={i} yearKey={object.yearNum} yearlyReports={object.reports} />)
                 })
             }
@@ -52,7 +49,6 @@ export default ReportsWrapper
 //             bucketedByYear.set(yearNum,{...existingValue, reports:[...existingValue.reports, report]} )
 //         }
 //     })
-//     console.log(bucketedByYear)
 //     return bucketedByYear
 // }
 

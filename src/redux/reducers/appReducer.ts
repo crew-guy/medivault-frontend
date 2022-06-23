@@ -65,7 +65,6 @@ const appReducer = (state:AppState=initialState , {type,payload}:any) => {
             }
         // Default case
         default:
-            // console.log('default case triggered')
             return {...state};
     }
 }
