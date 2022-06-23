@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch} from '@redux/store';
 import { useHistory } from 'react-router-dom';
 import { apiClient } from '../utils/apiClient'
-import toast from 'react-hot-toast'
 
 export default function useFirebaseAuth() {
   const [authUser, setAuthUser] = useState(null);
