@@ -1,7 +1,8 @@
 .heading-1 {
 	color: $vibra100;
 	opacity: 0.28;
-	font-family: 'Gilroy-5';
+	font-family: 'Roboto';
+font-weight: 600;
 }
 
 .heading-2 {
@@ -16,12 +17,14 @@
 
 .body-2 {
 	color: $vibra100;
-	font-family: 'Circular-Std-Book';
+	font-family: 'Roboto';
+font-weight: 300;
 }
 
 .body-3 {
 	color: $vibra100;
-	font-family: 'Circular-Std-Medium';
+	font-family: 'Roboto';
+font-weight: 400;
 }
 
 .subtitle-1 {
@@ -31,10 +34,12 @@
 
 .subtitle-2 {
 	color: $vibra100;
-	font-family: 'Circular-Std-Medium';
+	font-family: 'Roboto';
+font-weight: 400;
 }
 
 .subtitle-3 {
 	color: $vibra80;
-	font-family: 'Circular-Std-Medium';
+	font-family: 'Roboto';
+font-weight: 400;
 }

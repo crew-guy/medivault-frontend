@@ -20,7 +20,8 @@
 	width: 40%;
 	// word-wrap:break-word;
 	p {
-		font-family: 'Gilroy-5';
+		font-family: 'Roboto';
+font-weight: 600;
 		color: #898999;
 		opacity: 0.14;
 		font-size: 3rem;
@@ -39,7 +40,8 @@
 	margin: 1.7rem 0;
 }
 .logo-text {
-	font-family: 'Gilroy-4';
+	font-family: 'Roboto';
+font-weight: 500;
 	font-size: 2rem;
 	color: $vibra100;
 }
@@ -51,6 +53,7 @@
 		color: $blu40;
 		font-size: 1.4rem;
 		margin-bottom: 0.8rem;
-		font-family: 'Circular-Std-Medium';
+		font-family: 'Roboto';
+font-weight: 400;
 	}
 }

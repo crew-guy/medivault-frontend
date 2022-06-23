@@ -5,7 +5,8 @@
 	position: relative;
 	height: 100%;
 	position: relative;
-	font-family: 'Circular-Std-Book';
+	font-family: 'Roboto';
+font-weight: 300;
 	&.blurred {
 		filter: blur(3px);
 	}
@@ -19,7 +20,8 @@
 	background: $vibra100;
 	padding: 1.15rem 2.8rem;
 	color: $lumen10;
-	font-family: 'Circular-Std-Book';
+	font-family: 'Roboto';
+font-weight: 300;
 	font-size: 1.15rem;
 	border-radius: 0.4rem;
 	cursor: pointer;

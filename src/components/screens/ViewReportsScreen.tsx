@@ -18,7 +18,6 @@ import PreloaderScreen from './PreloaderScreen';
 // import jwt_decode from "jwt-decode";
 import {AnimatePresence} from 'framer-motion'
 import AddReportButton from '@widgets/AddReportButton';
-// import APIClient from "./../../APIClient";
 import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContext';
 import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 import { useAuth } from '@contexts/AuthContext'
@@ -33,7 +32,6 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
         "view-reports-layout": true,
         'blurred': mode === Mode.ADDING
     })
-
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
     const { setReportsCollection } = AC
@@ -41,6 +39,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
     const history = useHistory()
 
     useEffect(() => {
+        setReachedFooter(false);
         if (!auth.authUser) {
             return history.push('/login')
         }

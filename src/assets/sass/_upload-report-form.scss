@@ -13,7 +13,8 @@
 			cursor: pointer;
 			padding: 0 0.4rem;
 			text-align: right;
-			font-family: 'Circular-Std-Medium';
+			font-family: 'Roboto';
+font-weight: 400;
 			font-size: 1.3rem;
 			color: $blu80;
 		}
@@ -51,7 +52,8 @@
 			}
 			p {
 				margin-top: 3rem;
-				font-family: 'Circular-Std-Book';
+				font-family: 'Roboto';
+font-weight: 300;
 				font-size: 1.2rem;
 				color: $vibra40;
 				padding: 1rem 0;
@@ -113,7 +115,8 @@
 		width: 100%;
 		margin-top: 2rem;
 		@include flexbox(row, space-around, center);
-		font-family: 'Circular-Std-Book';
+		font-family: 'Roboto';
+font-weight: 300;
 		button {
 			border: none;
 			outline: none;

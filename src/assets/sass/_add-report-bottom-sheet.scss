@@ -211,7 +211,8 @@
 
 .rsbs-header {
 	margin: 1.9rem 0 1rem 0;
-	font-family: 'Circular-Std-Book';
+	font-family: 'Roboto';
+font-weight: 300;
 	color: $vibra80;
 	text-align: center;
 	@include flexbox(row, center, center);
