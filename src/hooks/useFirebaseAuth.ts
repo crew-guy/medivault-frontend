@@ -45,7 +45,7 @@ const history=useHistory()
 
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-            const email = await user.email;
+            const email = await user.email! || "test@example.com";
             const name = await user.displayName || 'MediVault'
             setUser(name, email, 'jwt')
             await apiClient.post('/patients', { name, email })
