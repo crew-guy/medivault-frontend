@@ -39,6 +39,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
 
     useEffect(() => {
         console.log(reachedFooter)
+        console.log('yo')
         if (!auth.authUser) {
             return history.push('/login')
         }
