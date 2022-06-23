@@ -14,6 +14,7 @@ import { bindActionCreators } from 'redux'
 import * as actions from '@actions/actionCreators'
 import { AppDispatch } from '@redux/store'
 import { apiClient } from '@utils/apiClient'
+import toast from 'react-hot-toast'
 
 interface FormInterface {
     reportName: string,
@@ -61,13 +62,15 @@ const BottomUploadReportForm = () => {
             files: uploadedFiles,
             authorId: patientId,
         }
-        setBottomUploadContainer(false)
         clearUploadedFiles()
         toggleAddMode()
+        setBottomUploadContainer(false)
         try {
-            const response = await apiClient.post('/reports',submission)
+            const toastId = toast.loading('Adding file...');
+            const response = await apiClient.post('/reports', submission)
+            toast.dismiss(toastId)
+            toast.success('Successfully uploaded record!')
             uploadReport(response as any);
-            window.location.reload();
         } catch (error) {
             
         }

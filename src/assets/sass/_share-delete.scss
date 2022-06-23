@@ -8,6 +8,7 @@ $corner-radius: 1.1rem;
 	z-index: 10;
 	top: 5.2rem;
 	transform-origin: top right;
+	font-family: 'Roboto';
 	background: linear-gradient(
 		180deg,
 		rgb(240, 240, 240) 0%,
@@ -22,7 +23,8 @@ $corner-radius: 1.1rem;
 		height: 100%;
 		cursor: pointer;
 		background: unset;
-		font-family: 'Circular-Air';
+		font-family: 'Roboto';
+
 		font-size: 1.4rem;
 		padding: 0rem 2.4rem;
 		@include flexbox(row, center, center);
@@ -54,7 +56,9 @@ $corner-radius: 1.1rem;
 		z-index: 10;
 		top: 3rem;
 		transform-origin: top right;
+		font-family: 'Roboto';
 		.action-button {
+			font-family: 'Roboto';
 			padding: 0.6rem 2.4rem;
 		}
 	}

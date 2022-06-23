@@ -33,7 +33,7 @@ font-weight: 400;
 				font-size: 1.4rem;
 				border: none;
 				outline: none;
-				font-family: 'Circular-Air';
+				font-family: 'Roboto';
 				padding-bottom: 0.4rem;
 				border-bottom: 1px solid $vibra60;
 			}
@@ -41,7 +41,7 @@ font-weight: 400;
 			label {
 				font-size: 0.9rem;
 				color: $vibra30;
-				font-family: 'Circular-Air';
+				font-family: 'Roboto';
 			}
 		}
 		.btn-tray {
@@ -64,7 +64,7 @@ font-weight: 300;
 				margin: 1rem 0;
 				border: none;
 				outline: none;
-				font-family: 'Circular-Air';
+				font-family: 'Roboto';
 				font-size: 1rem;
 				padding-bottom: 0.4rem;
 				width: 100%;
@@ -76,7 +76,7 @@ font-weight: 300;
 				color: $vibra40;
 				outline: none;
 				border-radius: 1.7rem;
-				font-family: 'Circular-Air';
+				font-family: 'Roboto';
 				background: $white;
 				padding: 0.3rem 0.7rem;
 				cursor: pointer;
@@ -96,10 +96,10 @@ font-weight: 300;
 		.report-date-container {
 			margin-top: 3rem;
 			@include flexbox(column, flex-start, flex-start);
-			font-family: 'Circular-Air';
+			font-family: 'Roboto';
 			input {
 				width: 100%;
-				font-family: 'Circular-Air';
+				font-family: 'Roboto';
 				font-size: 1.3rem;
 				background: $white;
 				border: none;

@@ -8,13 +8,13 @@
 
 .heading-2 {
   color: #00282d;
-  font-family: 'Roboto';
-font-weight: 500;
+  font-family: "Roboto";
+  font-weight: 500;
 }
 
 .body-1 {
   color: #00282d;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
 }
 
 .body-2 {
@@ -31,7 +31,7 @@ font-weight: 500;
 
 .subtitle-1 {
   color: #000d53;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
 }
 
 .subtitle-2 {
@@ -71,8 +71,8 @@ font-weight: 500;
   height: 4.2rem;
 }
 .login-screen .text-content .title {
-  font-family: 'Roboto';
-font-weight: 500;
+  font-family: "Roboto";
+  font-weight: 500;
   color: #00282d;
   font-size: 3.4rem;
 }
@@ -278,7 +278,7 @@ font-weight: 500;
 }
 .stories-container > div span {
   padding: 1rem 0;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
 }
 .stories-container > div span p {
   color: #f7f9ff !important;
@@ -472,7 +472,7 @@ font-weight: 500;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   border-radius: 1.4rem;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   color: #00282d;
   font-size: 1.1rem;
   padding: 1rem 1.5rem;
@@ -499,7 +499,7 @@ font-weight: 500;
   justify-content: flex-start;
   align-items: flex-end;
   flex-direction: row;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
 }
 .status .back-to-viewing {
   margin-right: 1.4rem;
@@ -515,6 +515,8 @@ font-weight: 500;
 .action-bar {
   padding-bottom: 1.4rem;
   padding-top: 1rem;
+  padding-right: 2rem;
+  cursor: pointer;
 }
 
 [data-rsbs-overlay] {
@@ -861,6 +863,7 @@ font-weight: 500;
   z-index: 10;
   top: 5.2rem;
   transform-origin: top right;
+  font-family: "Roboto";
   background: linear-gradient(180deg, rgb(240, 240, 240) 0%, rgba(240, 240, 240, 0.3) 100%) !important;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -876,7 +879,7 @@ font-weight: 500;
   height: 100%;
   cursor: pointer;
   background: unset;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   font-size: 1.4rem;
   padding: 0rem 2.4rem;
   display: flex;
@@ -906,8 +909,10 @@ font-weight: 500;
   z-index: 10;
   top: 3rem;
   transform-origin: top right;
+  font-family: "Roboto";
 }
 .stories-screen-navbar .share-delete-container .action-button {
+  font-family: "Roboto";
   padding: 0.6rem 2.4rem;
 }
 
@@ -961,14 +966,14 @@ font-weight: 500;
   font-size: 1.4rem;
   border: none;
   outline: none;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   padding-bottom: 0.4rem;
   border-bottom: 1px solid #3f6695;
 }
 .upload-report-form .report-form .report-name-wrapper label {
   font-size: 0.9rem;
   color: #bfbfc7;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
 }
 .upload-report-form .report-form .btn-tray {
   -ms-overflow-style: none;
@@ -991,7 +996,7 @@ font-weight: 500;
   margin: 1rem 0;
   border: none;
   outline: none;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   font-size: 1rem;
   padding-bottom: 0.4rem;
   width: 100%;
@@ -1003,7 +1008,7 @@ font-weight: 500;
   color: #c2dae8;
   outline: none;
   border-radius: 1.7rem;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   background: #fff;
   padding: 0.3rem 0.7rem;
   cursor: pointer;
@@ -1027,11 +1032,11 @@ font-weight: 500;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
 }
 .upload-report-form .report-form .report-date-container input {
   width: 100%;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   font-size: 1.3rem;
   background: #fff;
   border: none;
@@ -1092,7 +1097,7 @@ font-weight: 500;
   margin-right: 0.5rem;
 }
 .month-bar .month-year-key {
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   font-size: 1rem;
   color: #3f6695;
 }
@@ -1246,7 +1251,7 @@ font-weight: 500;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }
 .report-card .title-date .date {
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   font-size: 0.8rem;
 }
 .report-card .tag-icon .tags-container {
@@ -1259,7 +1264,7 @@ font-weight: 500;
   background: #ecfdff;
   border-radius: 0.6rem;
   padding: 0.4rem;
-  font-family: "Circular-Air";
+  font-family: "Roboto";
   margin-right: 0.7rem;
 }
 .report-card .tag-icon .icon-img-container {
@@ -1323,6 +1328,7 @@ font-weight: 500;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+  font-family: "Roboto";
 }
 *:focus {
   outline: none;

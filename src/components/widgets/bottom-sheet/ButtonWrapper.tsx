@@ -7,6 +7,7 @@ import * as actionCreators from '@actions/actionCreators'
 import { FileInterface } from '@data/interfaces';
 import {useUpdateBottomUploadReportFilesContext} from '@contexts/BottomUploadReportFilesContext'
 import S3FileUpload from 'react-s3';
+import toast from 'react-hot-toast';
 
 // var mime = require('mime-types')
 const defaultThumbnailUrl = 'https://medivault-assets.s3.ap-south-1.amazonaws.com/pdf_thumbnail.svg'
@@ -56,7 +57,11 @@ const ButtonWrapper:
             const typeOfUploadedFile = uploadedFile.type.toLowerCase();
             if (uploadedFile) {
                 (async () => {
+                    
+                    const toastId = toast.loading('Adding file...');
                     const fileLocationInS3 = await uploadFileToS3(uploadedFile)
+                    toast.dismiss(toastId)
+                    toast.success('Added file!')
                     uploadFile({ dataUrl: fileLocationInS3, thumbnailUrl: typeOfUploadedFile === "application/pdf" ? defaultThumbnailUrl : fileLocationInS3, fileMimeType: typeOfUploadedFile })
                 })()
                 if (uploadedFiles.length > 0) {

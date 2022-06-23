@@ -23,7 +23,6 @@ import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 import { useAuth } from '@contexts/AuthContext'
 import { useHistory } from 'react-router-dom';
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
-    const [reachedFooter, setReachedFooter] = useState<boolean>(false)
     const patientId = useSelector((state:RootState)=> state.app.user.emailAddress)
     const mode = useSelector((state: RootState) => state.app.mode);
     const [loading, setLoading] = useState<boolean>(true)
@@ -34,15 +33,16 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
     const dispatch: AppDispatch = useDispatch()
     const AC = bindActionCreators(actionCreators, dispatch)
     const { setReportsCollection } = AC
+    const reports = useSelector((state:RootState)=> state.app.reportsCollection.reports)
     const auth = useAuth()
     const history = useHistory()
 
     useEffect(() => {
-        console.log(reachedFooter)
         if (!auth.authUser) {
             return history.push('/login')
         }
         (async () => {
+            if(!reports.length)
             try {
                 const fetchedReportsCollection = await retrieveData(patientId)
                 setReportsCollection(fetchedReportsCollection);
@@ -54,7 +54,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
             }
         })()
         // eslint-disable-next-line
-    }, [])
+    }, [reports])
 
     return (
         <BottomUploadContainerProvider>
@@ -70,7 +70,7 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                                <AddReportButton/>
                                }
                             </AnimatePresence>
-                            <Footer setReachedFooter={setReachedFooter}/>
+                            <Footer/>
                         </div>
                         <BottomNavigationComp/>
                         <BottomUploadContainer/>

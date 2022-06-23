@@ -6,23 +6,25 @@ import ReportYearContainer from './ReportYearContainer';
 
 const ReportsWrapper = () => {
     const collection = useSelector((state: RootState) => state.app.reportsCollection).reports;
-    // const collection = initialReportsCollection.reports;
-    const chronologicalCollection = collection.sort((a: any, b: any) => b.date - a.date)
-    // const arrangeReportsByMonth = getReportsByMonth(chronologicalCollection)
+    const chronologicalCollection = collection?.sort((a: any, b: any) => b.date - a.date)
+    console.log(chronologicalCollection)
     const bucketedByYear: any = new Map();
-    chronologicalCollection.forEach((report: any, i: any) => {
-        const yearNum = report.date.getFullYear();
-        if (!bucketedByYear.get(yearNum)) {
-            bucketedByYear.set(yearNum, { yearNum: yearNum, reports: [report] })
-        } else {
-            const existingValue = bucketedByYear.get(yearNum)
-            bucketedByYear.set(yearNum, { ...existingValue, reports: [...existingValue.reports, report] })
+    chronologicalCollection?.forEach((report: any, i: any) => {
+        console.log(report, report?.date)
+        if (report?.date?.getFullYear()) {
+            const yearNum = report?.date?.getFullYear();
+            if (!bucketedByYear.get(yearNum)) {
+                bucketedByYear?.set(yearNum, { yearNum: yearNum, reports: [report] })
+            } else {
+                const existingValue = bucketedByYear.get(yearNum)
+                bucketedByYear?.set(yearNum, { ...existingValue, reports: [...existingValue.reports, report] })
+            }
         }
     });
     const yearlyReportsArray:any[] = [];
     const yearKeyArray:string[] = [];
-    bucketedByYear.forEach((value: any, key: any) => yearlyReportsArray.push(value));
-    bucketedByYear.forEach((value:any,key:any)=> yearKeyArray.push(key))
+    bucketedByYear?.forEach((value: any, key: any) => yearlyReportsArray.push(value));
+    bucketedByYear?.forEach((value:any,key:any)=> yearKeyArray.push(key))
 
     return (
         <div className="reports-wrapper">

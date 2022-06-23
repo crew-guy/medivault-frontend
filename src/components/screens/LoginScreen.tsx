@@ -14,9 +14,6 @@ const LoginScreen = () => {
 
 
     useEffect(() => {
-        // if (APIClient.users.isLoggedIn()) {
-        //     document.location = "/";
-        // }
     })
     const auth = useAuth()
 

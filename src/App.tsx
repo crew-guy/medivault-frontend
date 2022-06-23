@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import StoriesScreen from '@components/screens/StoriesScreen';
 import LoginScreen from '@components/screens/LoginScreen';
 import SearchScreen from '@components/screens/SearchScreen';
+import { Toaster } from 'react-hot-toast';
 import AuthUserProvider from '@contexts/AuthContext';
 // import mixpanel from 'mixpanel-browser'
 // import NotAuthenticatedScreen from '@components/screens/NotAuthenticatedScreen';
@@ -37,6 +38,7 @@ function App() {
                 </Switch>
             </div>
             </AuthUserProvider>
+            <Toaster/>
         </Router>
     );
 }

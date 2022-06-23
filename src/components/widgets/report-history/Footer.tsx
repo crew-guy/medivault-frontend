@@ -1,24 +1,12 @@
-import {useEffect} from 'react'
 import logoDark from '@images/logo-dark.svg'
-import { useInView } from 'react-intersection-observer';
 import { motion, AnimatePresence } from 'framer-motion'
-const Footer:React.FC<{setReachedFooter:any}> = ({setReachedFooter}) => {
-    // eslint-disable-next-line
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
-        threshold: 0.01,
-    });
-
-    useEffect(() => {
-        setReachedFooter(inView)
-        // eslint-disable-next-line
-    },[inView])
+const Footer:React.FC = () => {
 
     return (
-        <div ref={ref} className="footer-wrapper">
+        <div className="footer-wrapper">
             <div className="white-bar"></div>
             <AnimatePresence>
-                {inView && <motion.div
+                <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{type:"spring", delay:0.2, duration:1.6}}
@@ -34,7 +22,7 @@ const Footer:React.FC<{setReachedFooter:any}> = ({setReachedFooter}) => {
                         </div>
                         <p className="logo-text" >medivault</p>
                     </motion.div>
-                </motion.div>}
+                </motion.div>
             </AnimatePresence>
         </div>
     )

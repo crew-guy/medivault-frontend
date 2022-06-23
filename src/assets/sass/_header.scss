@@ -43,7 +43,7 @@ $padding-around: 1.3rem;
 			background: rgba(255, 255, 255, 0.7) !important;
 			backdrop-filter: blur(5px);
 			border-radius: 1.4rem;
-			font-family: 'Circular-Air';
+			font-family: 'Roboto';
 			color: $vibra100;
 			font-size: 1.1rem;
 			padding: 1rem 1.5rem;
@@ -67,7 +67,7 @@ $padding-around: 1.3rem;
 
 .status {
 	@include flexbox(row, flex-start, flex-end);
-	font-family: 'Circular-Air';
+	font-family: 'Roboto';
 	.back-to-viewing {
 		margin-right: 1.4rem;
 		cursor: pointer;
@@ -82,4 +82,6 @@ $padding-around: 1.3rem;
 .action-bar {
 	padding-bottom: 1.4rem;
 	padding-top: 1rem;
+	padding-right: 2rem;
+	cursor: pointer;
 }
