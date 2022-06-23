@@ -24,7 +24,7 @@ const ButtonWrapper:
     // const imageOutputRef = useRef<HTMLImageElement>(null)
     const dispatch: AppDispatch = useDispatch();
     const uploadedFiles:FileInterface[] = useSelector((store:RootState)=> store.app.uploadedFiles);
-    const patientId = useSelector((store:RootState)=> store.app.user.phoneNumber);
+    const patientId = useSelector((store:RootState)=> store.app.user.emailAddress);
     const AC = bindActionCreators(actionCreators, dispatch);
     const { uploadFile } = AC
     

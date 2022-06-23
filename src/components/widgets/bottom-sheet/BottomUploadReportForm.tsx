@@ -29,7 +29,7 @@ const BottomUploadReportForm = () => {
     const [form, setForm] = useState<FormInterface>({ reportName: "", reportDate: new Date(), reportType: ReportType.OTHER });
     const [isDisabled, setIsDisabled] = useState<boolean>(true)
     const [date, setDate] = useState<string>(moment(new Date()).format('YYYY-MM-DD'))
-    const patientId = useSelector((store:RootState)=> store.app.user.phoneNumber);
+    const patientId = useSelector((store:RootState)=> store.app.user.emailAddress);
 
     // Preparing dispatch actions
     const dispatch: AppDispatch = useDispatch()

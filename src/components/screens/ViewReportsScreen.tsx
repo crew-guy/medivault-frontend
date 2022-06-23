@@ -24,7 +24,7 @@ import { useAuth } from '@contexts/AuthContext'
 import { useHistory } from 'react-router-dom';
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
     const [reachedFooter, setReachedFooter] = useState<boolean>(false)
-    const patientId = useSelector((state:RootState)=> state.app.user.phoneNumber)
+    const patientId = useSelector((state:RootState)=> state.app.user.emailAddress)
     const mode = useSelector((state: RootState) => state.app.mode);
     const [loading, setLoading] = useState<boolean>(true)
     const viewReportsClass = cx({
