@@ -89,6 +89,8 @@ const Header: React.FC = () => {
                                 const remainingReports:Report[] = reportsCollection.reports.filter((report: Report) => !selectedReports.some((selectedReport: Report) => report.uuid === selectedReport.uuid));    
                                 setReportsCollection(remainingReports)
                                 toast.success("Successfully deleted record!")
+                                toggleSelectionMode();
+                                setShowOptions(false)
                             } 
                             }
                         }>{actionSelected}</p>
