@@ -9,7 +9,6 @@ import {useUpdateBottomUploadReportFilesContext} from '@contexts/BottomUploadRep
 const UploadReport = () => {
     
     const setBottomUploadReportFilesOpen = useUpdateBottomUploadReportFilesContext()
-    // const patientId = useSelector((store:RootState)=>(store.app.reportsCollection as any)[0].authorId)
     const uploadFiles = useSelector((store:RootState)=>store.app.uploadedFiles)
     return (
 

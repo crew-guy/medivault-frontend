@@ -11,9 +11,8 @@ export const useUpdateBottomUploadContainer = () => {
     return useContext(UpdateBottomUploadContainer)
 }
 
-// TODO : add type to "children"
 const BottomUploadContainerProvider = ({children}:any) => {
-    const [bottomUploadContainerOpen, setBottomUploadContainerOpen] = useState<boolean>(true)
+    const [bottomUploadContainerOpen, setBottomUploadContainerOpen] = useState<boolean>(false)
 
     return (
         <BottomUploadContainer.Provider value={bottomUploadContainerOpen}>

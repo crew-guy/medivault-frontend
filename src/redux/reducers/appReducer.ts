@@ -42,7 +42,6 @@ const appReducer = (state:AppState=initialState , {type,payload}:any) => {
                 ...state,
                 selectedReports:state.selectedReports.filter((rep)=> rep.uuid !== payload.report.uuid)
         }
-        
         // Related to uploading a new report
         case actions.ADDING_FILE:
             return {
@@ -57,11 +56,12 @@ const appReducer = (state:AppState=initialState , {type,payload}:any) => {
         case actions.CLEAR_UPLOADED_FILES:
             return {
                 ...state,
+                uploadedFiles: []
             }
         case actions.UPLOAD_REPORT:
             return {
                 ...state,
-                reportCollection: [...state.reportsCollection.reports,payload.report]
+                reportCollection: [...state.reportsCollection.reports, payload.report]
             }
         // Default case
         default:

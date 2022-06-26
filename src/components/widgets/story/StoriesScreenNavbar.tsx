@@ -24,7 +24,7 @@ const StoriesScreenNavbar:React.FC<I> = ({story}) => {
 
     return (
         <div className="stories-screen-navbar">
-        <button className="back-arrow" onClick={(e) => {
+        <button title="button" className="back-arrow" onClick={(e) => {
             e.stopPropagation()
             e.preventDefault();
             history.replace('/')
@@ -35,7 +35,7 @@ const StoriesScreenNavbar:React.FC<I> = ({story}) => {
             <p>{story.header.heading}</p>
             <p>{story.header.subheading}</p>
         </span>
-        <button className="more-options" onClick={
+        <button title="button" className="more-options" onClick={
                 (e:any) => {
                 e.stopPropagation()
                 e.preventDefault();

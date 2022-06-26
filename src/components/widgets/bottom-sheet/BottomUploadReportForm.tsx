@@ -30,7 +30,7 @@ const BottomUploadReportForm = () => {
     const [form, setForm] = useState<FormInterface>({ reportName: "", reportDate: new Date(), reportType: ReportType.OTHER });
     const [isDisabled, setIsDisabled] = useState<boolean>(true)
     const [date, setDate] = useState<string>(moment(new Date()).format('YYYY-MM-DD'))
-    const patientId = useSelector((store:RootState)=> store.app.user.emailAddress);
+    const patientId = useSelector((store: RootState) => store.app.user.emailAddress);
 
     // Preparing dispatch actions
     const dispatch: AppDispatch = useDispatch()
@@ -62,20 +62,19 @@ const BottomUploadReportForm = () => {
             files: uploadedFiles,
             authorId: patientId,
         }
-        clearUploadedFiles()
-        toggleAddMode()
-        setBottomUploadContainer(false)
         try {
             const toastId = toast.loading('Adding record...');
             const response = await apiClient.post('/reports', submission)
             toast.dismiss(toastId)
             toast.success('Successfully uploaded record!')
             uploadReport(response as any);
-            window.location.reload()
         } catch (error) {
-            
+            toast.error('Failed to upload record!')
         }
         setForm({ reportName: "", reportDate: new Date(), reportType: ReportType.OTHER })
+        clearUploadedFiles()
+        toggleAddMode()
+        setBottomUploadContainer(false)
     }
 
     const uploadButtonClass = cx({

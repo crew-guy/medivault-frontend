@@ -17,6 +17,7 @@ import BottomUploadContainerProvider from '@contexts/BottomUploadContainerContex
 import BottomNavigationComp from '@components/widgets/BottomNavigationComp';
 import { useAuth } from '@contexts/AuthContext'
 import { useHistory } from 'react-router-dom';
+
 const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = ({hasLoaded, setHasLoaded}) => {
     const patientId = useSelector((state:RootState)=> state.app.user.emailAddress)
     const mode = useSelector((state: RootState) => state.app.mode);
@@ -47,14 +48,13 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
             }
         })()
         // eslint-disable-next-line
-    }, [])
+    }, [mode])
 
     return (
         <BottomUploadContainerProvider>
             <Fragment>
                 {loading && !hasLoaded && <PreloaderScreen/>}
                 {!loading && <>
-                    {/* <AnimatePresence key={'top level'} > */}
                         <div className={viewReportsClass}>
                             <Header/>
                             <ReportsWrapper/>
@@ -67,7 +67,6 @@ const ViewReportsScreen: React.FC<{ hasLoaded: boolean, setHasLoaded: any }> = (
                         </div>
                         <BottomNavigationComp/>
                         <BottomUploadContainer/>
-                    {/* </AnimatePresence> */}
                 </>}
             </Fragment>
             </BottomUploadContainerProvider>
