@@ -1,6 +1,6 @@
 ## Description
 
-A simple application patients can use to safely & securely store their medical records in a centralized database, that can be accessed from all platforms
+A complete application patients can use to safely & securely store their medical records in a centralized database, that can be accessed from all platforms
 
 
 
